@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+        name: hello
+        labels:
+                environment: production
+                app: hello
+spec:
+        containers:
+                - name: hello
+                  image: kmmelcher/vtex-lab-exercise:latest
+                  ports:
+                          - containerPort: 8000

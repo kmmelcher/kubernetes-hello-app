@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+        name: hello-request
+spec:
+        template:
+                spec:
+                        containers:
+                                - name: hello-request
+                                  image: curlimages/curl
+                                  command: ["curl", "hello:8000"]
+                        restartPolicy: Never
+        backoffLimit: 4
+
